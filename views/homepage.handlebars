@@ -1,0 +1,13 @@
+<!-- Loop over each object in the entries array -->
+{{#each entries as |entry|}}
+  <div class="row mb-4 project">
+    <div class="col-md-5">
+      <h2>
+        {{entry.title}}
+      </h2>
+      <p>
+        {{entry.content}}
+      </p>
+    </div>
+  </div>
+{{/each}}
