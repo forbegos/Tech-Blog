@@ -16,7 +16,9 @@ router.get("/", async (req, res) => {
 
 router.get("/entry", async (req, res) => {
   try {
-    res.render("entry");
+    res.render("entry", {
+      include: [{ model: User, attributes: ["username"] }],
+    });
   } catch (err) {
     res.status(500).json(err);
   }
