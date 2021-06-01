@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+    <h2>New Entry</h2>
   </div>
 </div>
 
@@ -32,25 +32,5 @@
     </form>
   </div>
 
-  {{#if entry.length}}
-    <div class="col-md-6 entry-list">
-      <h3>Your posts:</h3>
 
-      {{#each entry as |entry|}}
-        <div class="row mb-2">
-          <div class="col-md-8">
-            <h4><a href="/entry/{{entry.id}}">{{entry.title}}</a></h4>
-          </div>
-          <div class="col-md-4">
-            <button
-              class="btn btn-sm btn-danger"
-              data-id="{{entry.id}}"
-            >DELETE</button>
-          </div>
-        </div>
-      {{/each}}
-    </div>
-  {{/if}}
-</div>
-
-<script src="./js/profile.js"></script>
+<script src="./js/entry.js"></script>
