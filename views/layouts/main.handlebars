@@ -20,13 +20,9 @@
         <div class="navbar-nav">
           <a class="nav-link" href="/">Home</a>
           <a class="nav-link" href="#">Dashboard</a>
-          {{#if logged_in}}
-            <a href="#" class="nav-link">Logout</a>
-          {{else}}
-            <a href="#" class="nav-link">Login</a>
-          {{/if}}
+          <button href="/" class="nav-link" id="logout">Logout</button>
+          <a href="/login" class="nav-link">Login</a>
         </div>
-        {{! </div> }}
       </div>
     </nav>
     <main class="container container-fluid mt-5">
@@ -40,9 +36,7 @@
     </footer>
 
     <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
+    <script src="/js/logout.js"></script>
   </body>
 
 </html>

@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/newentry");
+      document.location.replace("/entry");
     } else {
       alert(response.statusText);
     }
