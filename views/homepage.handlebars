@@ -1,20 +1,18 @@
 <!-- Loop over each object in the entries array -->
-{{#each entries as |entry|}}
-  <div class="row mb-4 project">
-    <div class="col-md-5">
-      <div class="card" style="width: 60rem;">
-        <div class="card-header">
-          <h3>
-            {{entry.title}}
-          </h3>
-        </div>
-        <div class="card-body">
-          <p class="card-text"> {{entry.content}}</p>
-        </div>
+<div>
+  {{#each entries as |entry|}}
+    <div class="card" style="width: 60rem;">
+      <div class="card-header">
+        <h3>
+          {{entry.title}}
+        </h3>
+      </div>
+      <div class="card-body">
+        <p class="card-text"> {{entry.content}}</p>
       </div>
     </div>
-  </div>
-{{/each}}
-<div>
-  <a href="/entry" class="btn btn-primary stretched-link">New Post</a>
+    <br />
+    {{! add delete button here for each post??? }}
+  {{/each}}
+  <a href="/entry" class="btn btn-primary">New Post</a>
 </div>
