@@ -6,7 +6,7 @@
         <h3>
           {{entry.title}}
         </h3>
-        <p>Posted by: {{entry.user.username}} on: <p>
+        <p>Posted by: {{entry.user.username}} on: {{format_date entry.date_created}} <p>
       </div>
       <div class="card-body">
         <p class="card-text"> {{entry.content}}</p>
