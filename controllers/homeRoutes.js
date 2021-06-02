@@ -1,25 +1,34 @@
 const router = require("express").Router();
-const Entry = require("../models/Entry");
-const User = require("../models/User");
+const { Entry, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
-  req.session.logged_in = false;
+  // req.session.logged_in = false;
+  console.log(req.session.logged_in);
   try {
-    const blogData = await Entry.findAll();
+    const blogData = await Entry.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
     const entries = blogData.map((entry) => entry.get({ plain: true }));
+    console.log(entries);
     res.render("homepage", {
       entries,
     });
   } catch (err) {
-    res.status(700).json(err);
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
 router.get("/entry", withAuth, async (req, res) => {
   try {
     res.render("entry", {
-      include: [{ model: User, attributes: ["username"] }],
+      include: [{ model: User }],
     });
   } catch (err) {
     res.status(500).json(err);

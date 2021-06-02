@@ -1,13 +1,15 @@
-// const User = require("./User");
-// const Entry = require("./Entry");
+const User = require("./User");
+const Entry = require("./Entry");
+
+Entry.belongsTo(User, {
+  foreignKey: "user_id",
+  allowNull: true,
+});
 
 // User.hasMany(Entry, {
-//   foreignKey: "user_id",
+//   foreignKey: "user-id",
+//   allowNull: true,
 //   onDelete: "CASCADE",
 // });
 
-// Entry.belongsTo(User, {
-//   foreignKey: "user_id",
-// });
-
-// module.exports = { User, Entry };
+module.exports = { User, Entry };
