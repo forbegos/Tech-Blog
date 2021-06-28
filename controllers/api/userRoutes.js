@@ -3,6 +3,7 @@ const User = require("../../models/User");
 
 router.post("/", async (req, res) => {
   try {
+    console.log("starting create users");
     const userData = await User.create(req.body);
 
     req.session.save(() => {
